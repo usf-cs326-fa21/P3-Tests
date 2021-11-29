@@ -35,6 +35,12 @@ subtest("Splitting a non-free block",
     free(block);
 });
 
+subtest("Splitting a NULL block",
+{
+    struct mem_block *result = split_block(NULL, 1024);
+    test_assert(result == NULL);
+});
+
 subtest("Invalid split sizes",
 {
     struct mem_block *block = malloc(sizeof(struct mem_block));
