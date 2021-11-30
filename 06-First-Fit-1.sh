@@ -2,11 +2,11 @@ source "${TEST_DIR}/lib/funcs.bash"
 
 expected_order=$(cat <<EOM
 Test Allocation: 0
+Test Allocation: 1
+Test Allocation: 2
 Test Allocation: 5
 Test Allocation: 6
 Test Allocation: 7
-Test Allocation: 2
-Test Allocation: 3
 Test Allocation: 4
 EOM
 )
