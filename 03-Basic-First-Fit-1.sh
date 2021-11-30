@@ -12,6 +12,14 @@ EOM
 
 test_start "Basic First Fit"
 
+# !!!!!!!!!!!!!!!!
+# Please remember that the FSM algorithms use the **free list** to find a free
+# block so the 'first' available block is not necessarily what would print
+# first.
+#
+# The head of the free list is the most recently-freed block.
+# !!!!!!!!!!!!!!!!
+
 output=$( \
     ALLOCATOR_ALGORITHM=first_fit \
     tests/progs/allocations-1)
