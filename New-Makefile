@@ -9,7 +9,7 @@ LDLIBS +=
 LDFLAGS +=
 
 $(lib): allocator_overrides.c lib$(lib)
-	$(CC) $(CFLAGS) -DLOGGER=$(LOGGER) allocator_overrides.c lib$(lib) -o $@
+	$(CC) $(CFLAGS) -DLOGGER=$(LOGGER) -L. -Wl,-rpath='$$ORIGIN' allocator_overrides.c lib$(lib) -o $@
 
 lib$(lib): allocator.c allocator.h logger.h
 	$(CC) $(CFLAGS) -DLOGGER=$(LOGGER) allocator.c -o $@

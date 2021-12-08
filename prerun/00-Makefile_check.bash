@@ -5,7 +5,7 @@ if [[ ! -f "${TEST_DIR}/../liballocator.so" \
     read response
     if [[ "${response}" == "y" || "${response}" == "Y" ]]; then
         cp -v "${TEST_DIR}/New-Makefile" "${TEST_DIR}/../Makefile"
-        echo "Please retry your tests now."
+        echo "Please do a 'make clean' and retry your tests now."
         exit
     fi
 fi
